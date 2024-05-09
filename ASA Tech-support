@@ -1,0 +1,2 @@
+ASA wygenerowanie pliku tch support do pliku i zapis na udziale
+#show tech-support file ftp://user:haslo$@10.143.135.40/tech.txt
