@@ -1,0 +1,19 @@
+FXOS troubleshoot file for 4100-series or 9300-series devices:
+SSH to the 4100 or 9300 device's management interface, and follow the steps below to generate the FXOS troubleshoot files:
+ 
+fpr9300# connect local-mgmt
+fpr9300(local-mgmt)# show tech-support fprm detail
+fpr9300(local-mgmt)# show tech-support chassis 1 detail
+fpr9300(local-mgmt)# show tech-support module 1 detail
+fpr9300(local-mgmt)# dir workspace:/techsupport/
+ 
+Note: You will see the 3 troubleshoot .tar.gz files (fprm, chassis, module) just created in the above directory.
+SCP the troubleshoot files from the 4100/9300 to your PC/laptop which is running the SCP server software:
+ 
+fpr9300(local-mgmt)# copy workspace:/techsupport/20180319163904_fpr9300.cisco.com_FPRM.tar.gz scp://cisco@X.X.X.X
+fpr9300(local-mgmt)# copy workspace:/techsupport/20180319175334_fpr9300_BC1_all.tar scp://cisco@X.X.X.X
+fpr9300(local-mgmt)# copy workspace:/techsupport/Firepower-Module1_03_19_2018_17_58_17.tar scp://cisco@X.X.X.X
+ 
+https://community.cisco.com/t5/security-documents/how-to-generate-fxos-troubleshoot-file-on-2100-4100-9300-series/ta-p/3364512> 
+ 
+ 
