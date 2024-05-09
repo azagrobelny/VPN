@@ -1,0 +1,10 @@
+vpn-idle-timeout 30 = the amount of time the vpn connection is idle ie. no activity seen on the tunnel, before it is disconnected
+vpn-session-timeout 900 = the amount of time the VPN tunnel is allowed to stay up regardless of whether there is activity or not
+ 
+Z <https://community.cisco.com/t5/network-security/what-is-the-difference-between-vpn-idle-timeout-and-vpn-session/td-p/1095487> 
+ 
+ 
+ASA: The default value of ‘vpn idle timeout’ is set to 30 minutes. 
+If the idle timeout is set to 30 minutes (default), it means that it drops the tunnel after 30 minutes of no traffic passes through it. The VPN client gets disconnected after 30 minutes regardless of the setting of idle timeout and encounters the PEER_DELETE-IKE_DELETE_UNSPECIFIED error.
+ 
+Z <https://www.cisco.com/c/en/us/support/docs/security/asa-5500-x-series-next-generation-firewalls/81824-common-ipsec-trouble.html#solution13> 
